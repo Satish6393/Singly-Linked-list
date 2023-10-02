@@ -193,6 +193,155 @@ struct node* current = start;\
 struct node* index = NULL;
 int temp;
 
+if(start == NULL)
+{
+    return;
+}
+else{
+    while(current != NULL)
+    {
+        index = curent->link;
+        while(index != NULL)
+        {
+            if(current->link > index->info)
+            {
+                temp = current->info;
+                current->info = index->info;
+                index->info = temp;
+
+            }
+            index = index->link;
+        }
+        current = current->link;
+
+    }
+}
+}
+void reverseLL()
+{
+    struct node *t1, *t2, *temp;
+    t1 = t2 = NULL;
+    if(start == NULL)
+    printf("List is empty\n")
+else{
+    while(start == NULL)
+    t2 = start->link;
+start->link = t1;
+t1 = start;
+start = t2;
+}
+start = t1;
+temp = start;
+printf("Reversed linked list is: ");
+    while(temp !=NULL)
+    {
+        printf("%d", temp->info);
+        temp = temp->link;
+    }
+}
+void search()
+{
+    int found = 1;
+    struct node* tr = start;
+    if(start == NULL)
+    {
+        printf("Linked list is empty");
+    }
+    else{
+        printf("\nEnter the element you want to search :");
+        int key;
+        scanf("%d", &key);
+        while(tr != NULL)
+        {
+            if(tr->info = key)
+            {
+                found = 1;
+                break;
+            }
+            else{
+                tr = tr->link;
+            }
+        }
+    }
+    if(found == 1)
+    {
+        printf("yes, %d is present in the linked list.\n", key);
+
+    }
+    else{
+        printf("NO, %d is not present in the linked list.\n");
+    }
+}
+int main()
+{
+    creatlist();
+    int choice;
+    while(1)
+    {
+        printf("\n\t1 To see list\n");
+        printf("\t2 For insertion at starting\n");
+        printf("\t3 For insertion at end\n");
+        printf("\t4 For insertion at any position\n");
+        printf("\t5 For deletion of first element\n");
+        printf("\t6 For deletion of last elememt\n");
+        printf("\t7 For deletion of element at any position\n");
+        printf("\t8 To find maximum among them\n");
+        printf("\t9 To find the mean of the element\n");
+        printf("\t10 To sort element\n");
+        printf("\t11 To reverse the linked list\n");
+        printf("\t12 Search an element in linked list\n");
+        printf("\t13 To exit\n");
+        scanf("%d", &choice);
+        
+        switch (choice)
+        {
+            case 1:
+            traverse();
+            break;
+            case 2:
+            insertatFront();
+            break;
+            case 3:
+            insertatEnd();
+            break;
+            case 4:
+            isertatPosition();
+            break;
+            case 5:
+            deleteFirst();
+            break;
+            case 6:
+            deleteEnd();
+            break;
+            case 7:
+            deletePosition();
+            break;
+            case 8:
+            maximum();
+            break;
+            case 9:
+            mean();
+            break;
+            case 10:
+            sort();
+            break;
+            case 11:
+            reverseLL();
+            break;
+            case 12:
+            search();
+            break;
+            case 13:
+            exit();
+            break;
+            default:
+            printf("Incorrect choice\n");
+     
+        }
+    }
+    return 0;
+    }
+
 
 
 
