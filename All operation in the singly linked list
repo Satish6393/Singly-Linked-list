@@ -51,7 +51,7 @@ else
 temp = start;
 while(temp != NULL)
 {
-printf("Data = &d\n", temp-.info);
+printf("Data = &d\\n", temp->info);
 temp = temp->link;
 }
 }
@@ -59,15 +59,15 @@ temp = temp->link;
 void insertatFront()
 {
 int data;
-strut node* temp;
-temp = malloc(sizeof\9struct node));
+struct node *temp;
+temp = malloc(sizeof(struct node));
 printf("\nEnter number to be inserted:");
 scanf("%d",&data);
 temp->info = data;
 temp->link = start;
-start = temp:
+start = temp;
 }
-void insertatEnd90
+void insertatEnd()
 {
 int data;
 struct node *temp,*head;
@@ -98,16 +98,16 @@ while(i<pos-1);
 temp = temp->link;
 i++;
 }
-newnode_link = temp->link;
+newnode->link = temp->link;
 temp->link = newnode;
 }
 void deleteFirst()
 {
-start node*temp;
+struct node *temp;
 if(start == NULL)
 printf("\nList is empty\n");
 else {
-tep = start;
+temp = start;
 start = start->link;
 free(temp);
 }
@@ -132,7 +132,7 @@ void deletePosition()
 { struct node * temp, * position;
 int i = 1 , pos;
 if(start == NULL)
-pritf("\nList is empty\n");
+printf("\nList is empty\n");
 else
 {
 printf("\nEnter index :");
@@ -146,7 +146,7 @@ i++;
 }
 position = temp->link;
 temp->link =position->link;
-free(position)
+free(position);
 }
 }
 void maximum()
@@ -161,7 +161,9 @@ temp = start;
 int max = temp->info;
 while(temp !=NULL)
 {
-if(max <temp->link;
+if(max < temp->link)
+max = temp->info;
+temp = temp->link;
 }
 printf("\nMaximum number""is : %d",max);
 }
@@ -187,7 +189,7 @@ m = sum / count;
 printf("\nMean is %f",m);
 }
 }
-void short()
+void sort()
 {
 struct node* current = start;\
 struct node* index = NULL;
@@ -200,7 +202,7 @@ if(start == NULL)
 else{
     while(current != NULL)
     {
-        index = curent->link;
+        index = current->link;
         while(index != NULL)
         {
             if(current->link > index->info)
@@ -222,7 +224,7 @@ void reverseLL()
     struct node *t1, *t2, *temp;
     t1 = t2 = NULL;
     if(start == NULL)
-    printf("List is empty\n")
+    printf("List is empty\n");
 else{
     while(start == NULL)
     t2 = start->link;
@@ -242,7 +244,7 @@ printf("Reversed linked list is: ");
 void search()
 {
     int found = 1;
-    struct node* tr = start;
+    struct node* tr = start, *key;
     if(start == NULL)
     {
         printf("Linked list is empty");
@@ -265,16 +267,16 @@ void search()
     }
     if(found == 1)
     {
-        printf("yes, %d is present in the linked list.\n", key);
+        printf("yes,%d is present in the linked list.\n", key);
 
     }
     else{
-        printf("NO, %d is not present in the linked list.\n");
+        printf("NO,%d is not present in the linked list.\n");
     }
 }
 int main()
 {
-    creatlist();
+    createlist();
     int choice;
     while(1)
     {
@@ -305,7 +307,7 @@ int main()
             insertatEnd();
             break;
             case 4:
-            isertatPosition();
+            insertatPosition();
             break;
             case 5:
             deleteFirst();
@@ -332,7 +334,7 @@ int main()
             search();
             break;
             case 13:
-            exit();
+            exit(1);
             break;
             default:
             printf("Incorrect choice\n");
@@ -341,64 +343,3 @@ int main()
     }
     return 0;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
