@@ -56,7 +56,7 @@ temp = temp->link;
 }
 }
 }
-void insertatfront()
+void insertatFront()
 {
 int data;
 strut node* temp;
@@ -67,7 +67,7 @@ temp->info = data;
 temp->link = start;
 start = temp:
 }
-void insertatend90
+void insertatEnd90
 {
 int data;
 struct node *temp,*head;
@@ -83,7 +83,7 @@ head = head->link;
 }
 head->link = temp;
 }
-void insertatposition()
+void insertatPosition()
 {
 struct node *temp,*newnode;
 int pos,data, i=1;
@@ -101,7 +101,7 @@ i++;
 newnode_link = temp->link;
 temp->link = newnode;
 }
-void deletefirst()
+void deleteFirst()
 {
 start node*temp;
 if(start == NULL)
@@ -112,7 +112,7 @@ start = start->link;
 free(temp);
 }
 }
-void deleteend()
+void deleteEnd()
 {
 struct node *temp,*prevnode;
 if(start == NULL)
@@ -128,7 +128,7 @@ free(temp);
 prevnode->link = 0;
 } 
 }
-void deleteposition()
+void deletePosition()
 { struct node * temp, * position;
 int i = 1 , pos;
 if(start == NULL)
